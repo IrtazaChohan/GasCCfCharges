@@ -10,12 +10,37 @@ using System.Windows.Forms;
 
 namespace GasCCfCharges
 {
-    public partial class Form1 : Form
+    public partial class FrmGasCCFPrice : Form
     {
-        public Form1()
+        public FrmGasCCFPrice()
         {
             InitializeComponent();
         }
 
+        double gas = 0;
+        double result = 0;
+        string formattedMoneyValue;
+        private void lblCost_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            if(int.Parse(txtGas.Text) <= 8)
+            {
+                result = int.Parse(txtGas.Text) * 0.50;
+                string formattedMoneyValue = String.Format("{0:C2}", result);
+                lblResult.Text = "Cost is " + formattedMoneyValue;
+                lblResult.Visible = true;
+            }
+            else if (int.Parse(txtGas.Text) >8)
+            {
+                result = int.Parse(txtGas.Text) * 0.30 + 8 * 0.50;
+                lblResult.Text = "Cost is " + result.ToString("{0:C2}");
+                
+                lblResult.Visible = true;
+            }
+        }
     }
 }
