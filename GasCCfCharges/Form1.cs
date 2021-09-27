@@ -36,7 +36,9 @@ namespace GasCCfCharges
             }
             else if (int.Parse(txtGas.Text) >8)
             {
-                result = int.Parse(txtGas.Text) * 0.30 + 8 * 0.50;
+                //we want anything after 8ccf to be costing 30p and the first 8 to always be 50p
+                gas = int.Parse(txtGas.Text);
+                result = ((gas - 8) * 0.30) + (8 * 0.50);
                 string formattedMoneyValue = String.Format("{0:C2}", result);
                 lblResult.Text = "Cost is " + formattedMoneyValue;
                 lblResult.Visible = true;
