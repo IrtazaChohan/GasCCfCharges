@@ -17,6 +17,13 @@ namespace GasCCfCharges
             InitializeComponent();
         }
 
+        //A gas company measures the amount of gas its customers use in hundreds of cubic feet(ccf) and charges them
+        //according to the following schedule:
+        //    first 8 ccf 50 cents each
+        //    more than 8 ccf 30 cents each
+        //Note that the 30 cent rate applies only to usage above 8 ccf.A customer who uses 10 ccf is charged 50 cents for the
+        //first 8 ccf and 30 cents for the next 2 ccf.Write a program to calculate customer’s bills.
+
         double gas = 0;
         double result = 0;
         string formattedMoneyValue;
